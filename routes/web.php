@@ -14,7 +14,6 @@ use PhpParser\Node\Stmt\Echo_;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::view('/hello', 'Hello World');
 
 Route::get('/hallo', [WelcomeController::class,'hallo']);
 

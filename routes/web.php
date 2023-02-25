@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 use PhpParser\Node\Stmt\Echo_;
 
@@ -27,18 +28,6 @@ Route::get('/', function () {
 });
 */
 
-
-Route::get('/', function (){
-    echo "Selamat Datang";
-});
-
-Route::get('/about', function(){
-    echo "Nama : Afifah Salsabila";
-    echo "<br>";
-    echo "NIM : 2141720118";
-});
-
-Route::get('/articles/{id}', function($id){
-    echo "Halaman artikel dengan id  " .$id;
-});
-
+Route::get('/', [PageController::class, 'index']);
+Route::get('/about', [PageController::class, 'about']);
+Route::get('/articles/{id}', [PageController::class, 'articles']);
